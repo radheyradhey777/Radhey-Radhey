@@ -10,13 +10,37 @@
 </head>
 <body oncontextmenu="return false">
   <script>
+    // Disable common developer tools shortcuts
     document.onkeydown = function(e) {
-      if(e.keyCode==123 || (e.ctrlKey && e.shiftKey && e.keyCode==73) || (e.ctrlKey && e.shiftKey && e.keyCode==74) || (e.ctrlKey && e.keyCode==85)) {
-        alert('Inspection disabled');
+      if (
+        e.keyCode == 123 || // F12
+        (e.ctrlKey && e.shiftKey && e.keyCode == 73) || // Ctrl+Shift+I (Inspect Element)
+        (e.ctrlKey && e.shiftKey && e.keyCode == 74) || // Ctrl+Shift+J (Console)
+        (e.ctrlKey && e.keyCode == 85) // Ctrl+U (View Source)
+      ) {
+        alert('Inspection disabled.');
         return false;
       }
     };
-    document.write('<iframe src="'+atob("aHR0cHM6Ly96dHhob3N0aW5nLnNpdGUvZ2FtZS1ob3N0aW5n")+'" allowfullscreen></iframe>');
+
+    // Obfuscate the link more by splitting it and rejoining
+    const part1 = "aHR0cHM6L";
+    const part2 = "y96dHhob3N0a";
+    const part3 = "W5nLnNpdGUvZ2F";
+    const part4 = "tZS1ob3N0aW5n";
+    const fullEncodedLink = part1 + part2 + part3 + part4;
+
+    // Further deter right-click and selection
+    document.addEventListener('contextmenu', event => event.preventDefault());
+    document.addEventListener('selectstart', event => event.preventDefault());
+    document.addEventListener('copy', event => {
+      event.preventDefault();
+      alert('Copying is disabled.');
+    });
+    document.addEventListener('dragstart', event => event.preventDefault());
+
+
+    document.write('<iframe src="' + atob(fullEncodedLink) + '" allowfullscreen></iframe>');
   </script>
 </body>
 </html>
