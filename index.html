@@ -3,11 +3,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
-  <meta name="description" content="The Best Game Server Hosting for ARK, Rust, Minecraft, Valheim & More
-Experience lightning-fast performance and 24/7 uptime with our premium game server hosting. Instantly deploy servers for your favorite games and start playing with friends in minutes. Easy setup, full control, and unbeatable support — perfect for casual gamers and serious communities alike.">
+  <meta name="description" content="The Best Game Server Hosting for ARK, Rust, Minecraft, Valheim & More Experience lightning-fast performance and 24/7 uptime with our premium game server hosting. Instantly deploy servers for your favorite games and start playing with friends in minutes. Easy setup, full control, and unbeatable support — perfect for casual gamers and serious communities alike.">
   <title>ZTX Hosting</title>
   
+  <!-- Preload critical images for faster loading -->
+  <!-- These remain absolute or root-relative as they refer to specific files that might be served from the root or CDN. -->
+  <link rel="preload" href="/favicon.svg" as="image">
+  <link rel="preload" href="https://ztxhosting.site/ztxbanner.png" as="image">
+
   <!-- Social Media Preview Meta Tags -->
+  <!-- These URLs typically need to be absolute for external platforms to resolve correctly. -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ztxhosting.site">
   <meta property="og:title" content="ZTX Hosting">
@@ -23,7 +28,7 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
   <!-- End of Social Media Preview Meta Tags -->
 
   <!-- Favicon and Manifest Links -->
-  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <!-- These paths typically remain root-relative or relative to ensure they are found by the browser. -->
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
@@ -92,6 +97,7 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
     .logo img {
       width: 35px;
       height: 35px;
+      display: block; /* Ensure image behaves as a block element */
     }
 
     /* Navigation Menu Styles */
@@ -309,12 +315,12 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
     ZTX Hosting
   </div>
   <nav class="nav-menu" id="nav-menu">
-    <!-- Updated navigation links to directly open new pages -->
-    <a href="https://ztxhosting.site/game-hosting" class="active">Game Hosting</a>
-    <a href="https://ztxhosting.site/vps">VPS</a>
-    <a href="https://ztxhosting.site/dedicated">Dedicated</a>
-    <a href="https://ztxhosting.site/support" class="support-btn">Support</a>
-    <a href="https://ztxhosting.site/coming" class="login-btn">Login</a>
+    <!-- Updated navigation links to relative paths -->
+    <a href="game-hosting" class="active">Game Hosting</a>
+    <a href="vps">VPS</a>
+    <a href="dedicated">Dedicated</a>
+    <a href="support" class="support-btn">Support</a>
+    <a href="coming" class="login-btn">Login</a>
   </nav>
   <!-- Mobile menu toggle button -->
   <button class="mobile-menu-btn" onclick="toggleMenu()">
@@ -327,7 +333,7 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
   <div class="container">
     <h1>Premium Game Server Hosting</h1>
     <p>Get ultra-low latency with 99.99% uptime guarantee and premium hardware for the best gaming experience</p>
-    <a href="https://ztxhosting.site/game-hosting" class="cta-button">Get Started Now</a>
+    <a href="game-hosting" class="cta-button">Get Started Now</a>
   </div>
 </section>
 
@@ -338,7 +344,7 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
       <h2>Game Hosting Plans</h2>
       <p>Perfect for Minecraft, Rust, ARK, CS:GO and other popular games</p>
       <!-- "View Plans" button for Game Hosting -->
-      <a href="https://ztxhosting.site/game-hosting" class="cta-button view-plans-button">View Plans</a>
+      <a href="game-hosting" class="cta-button view-plans-button">View Plans</a>
     </div>
     <!-- Plan cards removed as per previous request -->
   </div>
@@ -351,7 +357,7 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
       <h2>VPS Hosting</h2>
       <p>High-performance virtual private servers with full root access</p>
       <!-- "View Plans" button for VPS Hosting -->
-      <a href="https://ztxhosting.site/vps" class="cta-button view-plans-button">View Plans</a>
+      <a href="vps" class="cta-button view-plans-button">View Plans</a>
     </div>
     <!-- Plan cards removed as per previous request -->
   </div>
@@ -364,7 +370,7 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
       <h2>Dedicated Servers</h2>
       <p>Enterprise-grade hardware with complete control</p>
       <!-- "View Plans" button for Dedicated Servers -->
-      <a href="https://ztxhosting.site/dedicated" class="cta-button view-plans-button">View Plans</a>
+      <a href="dedicated" class="cta-button view-plans-button">View Plans</a>
     </div>
     <!-- Plan cards removed as per previous request -->
   </div>
@@ -421,12 +427,12 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
 <!-- Footer Section -->
 <footer class="footer">
   <div class="container">
-    <!-- Footer links for Terms, Privacy, Refund, Blog -->
+    <!-- Footer links to relative paths -->
     <div class="footer-links">
-      <a href="https://ztxhosting.site/terms">Terms</a>
-      <a href="https://ztxhosting.site/privacy">Privacy</a>
-      <a href="https://ztxhosting.site/refund">Refund</a>
-      <a href="https://ztxhosting.site/blog">Blog</a>
+      <a href="terms">Terms</a>
+      <a href="privacy">Privacy</a>
+      <a href="refund">Refund</a>
+      <a href="blog">Blog</a>
     </div>
     <div class="footer-bottom">
       <p>&copy; 2023 - 2025 ZTX Hosting | All rights reserved</p>
@@ -461,4 +467,3 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
 
 </body>
 </html>
-
