@@ -7,16 +7,21 @@
   <meta name="description" content="The Best Game Server Hosting for ARK, Rust, Minecraft, Valheim & More
 Experience lightning-fast performance and 24/7 uptime with our premium game server hosting. Instantly deploy servers for your favorite games and start playing with friends in minutes. Easy setup, full control, and unbeatable support — perfect for casual gamers and serious communities alike.">
   
-  <!-- Favicon links -->
+  <!-- Preload critical favicon images for faster loading -->
+  <!-- This tells the browser to fetch these images early, improving perceived load time. -->
+  <link rel="preload" href="/favicon.svg" as="image">
+  <link rel="preload" href="/favicon-96x96.png" as="image">
+
+  <!-- Favicon links (remain root-relative or absolute as they are site assets) -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="shortcut icon" href="/favicon.ico" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
   
-  <!-- Google Fonts: Poppins for modern typography -->
+  <!-- Google Fonts: Poppins for modern typography (external, remains absolute) -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome for icons -->
+  <!-- Font Awesome for icons (external, remains absolute) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   
   <style>
@@ -257,15 +262,15 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
   <!-- Header Section (Consistent with main ZTX Hosting site) -->
   <header>
     <div class="logo">
-      <img src="https://ztxhosting.site/favicon.svg" alt="ZTX Logo" />
+      <img src="/favicon.svg" alt="ZTX Logo" /> <!-- Changed to root-relative -->
       ZTX Hosting
     </div>
     <nav class="nav-menu" id="nav-menu">
-      <a href="https://ztxhosting.site/game-hosting" class="active">Game Hosting</a>
-      <a href="https://ztxhosting.site/vps">VPS</a>
-      <a href="https://ztxhosting.site/dedicated">Dedicated</a>
-      <a href="https://ztxhosting.site/support" class="support-btn">Support</a>
-      <a href="https://ztxhosting.site/coming" class="login-btn">Login</a>
+      <a href="game-hosting" class="active">Game Hosting</a> <!-- Converted to relative -->
+      <a href="vps">VPS</a> <!-- Converted to relative -->
+      <a href="dedicated">Dedicated</a> <!-- Converted to relative -->
+      <a href="support" class="support-btn">Support</a> <!-- Converted to relative -->
+      <a href="coming" class="login-btn">Login</a> <!-- Converted to relative -->
     </nav>
     <button class="mobile-menu-btn" onclick="toggleMenu()">
       <i class="fas fa-bars"></i>
@@ -275,51 +280,51 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
   <section class="game-container">
     <!-- Minecraft Game Card -->
     <div class="game-card">
-      <img src="https://ztxhosting.site/Minecraftim.jpeg" alt="Minecraft">
+      <img src="https://ztxhosting.site/Minecraftim.jpeg" alt="Minecraft"> <!-- Image URL remains absolute -->
       <h2>Minecraft</h2>
       <p>High-performance Minecraft hosting with full mod & plugin support. Plans starting at ₹50/GB RAM.</p>
       <div class="buttons">
-        <a href="https://ztxhosting.site/minecraft-hosting" target="_blank"><i class="fa fa-server"></i> View Plans</a>
+        <a href="minecraft-hosting" target="_blank"><i class="fa fa-server"></i> View Plans</a> <!-- Converted to relative -->
       </div>
     </div>
 
     <!-- Rust Game Card -->
     <div class="game-card">
-      <img src="https://static-cdn.jtvnw.net/ttv-boxart/263490_IGDB-285x380.jpg" alt="Rust">
+      <img src="https://static-cdn.jtvnw.net/ttv-boxart/263490_IGDB-285x380.jpg" alt="Rust"> <!-- Image URL remains absolute -->
       <h2>Rust</h2>
       <p>Lag-free Rust server hosting with instant setup and DDOS protection.</p>
       <div class="buttons">
-        <a href="https://ztxhosting.site/coming" target="_blank"><i class="fa fa-server"></i> View Plans</a>
+        <a href="coming" target="_blank"><i class="fa fa-server"></i> View Plans</a> <!-- Converted to relative -->
       </div>
     </div>
 
     <!-- ARK: Survival Evolved Game Card -->
     <div class="game-card">
-      <img src="https://static-cdn.jtvnw.net/ttv-boxart/32507-285x380.jpg" alt="ARK">
+      <img src="https://static-cdn.jtvnw.net/ttv-boxart/32507-285x380.jpg" alt="ARK"> <!-- Image URL remains absolute -->
       <h2>ARK: Survival</h2>
       <p>Run your ARK servers smoothly with auto updates and custom map support.</p>
       <div class="buttons">
-        <a href="https://ztxhosting.site/coming" target="_blank"><i class="fa fa-server"></i> View Plans</a>
+        <a href="coming" target="_blank"><i class="fa fa-server"></i> View Plans</a> <!-- Converted to relative -->
       </div>
     </div>
 
     <!-- Counter-Strike 2 Game Card -->
     <div class="game-card">
-      <img src="https://static-cdn.jtvnw.net/ttv-boxart/32399-285x380.jpg" alt="CS2">
+      <img src="https://static-cdn.jtvnw.net/ttv-boxart/32399-285x380.jpg" alt="CS2"> <!-- Image URL remains absolute -->
       <h2>Counter-Strike 2</h2>
       <p>Low-latency Counter-Strike 2 servers with competitive tickrate and protection.</p>
       <div class="buttons">
-        <a href="https://ztxhosting.site/coming" target="_blank"><i class="fa fa-server"></i> View Plans</a>
+        <a href="coming" target="_blank"><i class="fa fa-server"></i> View Plans</a> <!-- Converted to relative -->
       </div>
     </div>
 
     <!-- GTA FiveM Game Card -->
     <div class="game-card">
-      <img src="https://static-cdn.jtvnw.net/ttv-boxart/32982-285x380.jpg" alt="FiveM">
+      <img src="https://static-cdn.jtvnw.net/ttv-boxart/32982-285x380.jpg" alt="FiveM"> <!-- Image URL remains absolute -->
       <h2>GTA FiveM</h2>
       <p>Premium FiveM hosting for RP servers with high performance and custom scripts support.</p>
       <div class="buttons">
-        <a href="https://ztxhosting.site/coming" target="_blank"><i class="fa fa-server"></i> View Plans</a>
+        <a href="coming" target="_blank"><i class="fa fa-server"></i> View Plans</a> <!-- Converted to relative -->
       </div>
     </div>
   </section>
@@ -327,12 +332,12 @@ Experience lightning-fast performance and 24/7 uptime with our premium game serv
   <!-- Footer Section (Consistent with main ZTX Hosting site) -->
   <footer class="footer">
     <div class="container">
-      <!-- Footer links for Terms, Privacy, Refund, Blog -->
+      <!-- Footer links for Terms, Privacy, Refund, Blog (Converted to relative) -->
       <div class="footer-links">
-        <a href="https://ztxhosting.site/terms">Terms</a>
-        <a href="https://ztxhosting.site/privacy">Privacy</a>
-        <a href="https://ztxhosting.site/refund">Refund</a>
-        <a href="https://ztxhosting.site/blog">Blog</a>
+        <a href="terms">Terms</a> <!-- Converted to relative -->
+        <a href="privacy">Privacy</a> <!-- Converted to relative -->
+        <a href="refund">Refund</a> <!-- Converted to relative -->
+        <a href="blog">Blog</a> <!-- Converted to relative -->
       </div>
       <div class="footer-bottom">
         <p>&copy; 2023 - 2025 ZTX Hosting | All rights reserved</p>
