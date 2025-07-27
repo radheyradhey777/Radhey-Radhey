@@ -1,574 +1,300 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
   <meta name="description" content="The Best Game Server Hosting for ARK, Rust, Minecraft, Valheim & More. Experience lightning-fast performance and 24/7 uptime with our premium game server hosting. Instantly deploy servers for your favorite games and start playing with friends in minutes. Easy setup, full control, and unbeatable support — perfect for casual gamers and serious communities alike.">
   <meta name="keywords" content="game server hosting, Minecraft hosting, Rust hosting, ARK hosting, VPS hosting, dedicated servers, low latency, DDoS protection">
+  <meta name="author" content="ZTX Hosting">
   <meta name="robots" content="index, follow">
   <title>ZTX Hosting</title>
 
-  <link rel="preload" href="/favicon.svg" as="image">
-  <link rel="preload" href="/ztxbanner.webp" as="image">
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <link rel="shortcut icon" href="/favicon.ico" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-  <link rel="manifest" href="/site.webmanifest" />
+  <!-- Favicon and Touch Icons -->
+  <link rel="icon" type="image/svg+xml" href="https://ztxhosting.site/favicon.svg" />
+  <link rel="shortcut icon" href="https://ztxhosting.site/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="https://ztxhosting.site/apple-touch-icon.png" />
+  <link rel="manifest" href="https://ztxhosting.site/site.webmanifest" />
 
+  <!-- Open Graph / Facebook -->
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://ztxhosting.site">
-  <meta property="og:title" content="ZTX Hosting">
+  <meta property="og:title" content="ZTX Hosting - Premium Game Server Hosting">
   <meta property="og:description" content="Powerful hosting for Minecraft, Rust, ARK, and more with 24/7 support. High-performance servers at affordable prices.">
-  <meta property="og:image" content="/ztxbanner.png">
+  <meta property="og:image" content="https://ztxhosting.site/ztxbanner.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
 
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ZTX Hosting">
+  <meta name="twitter:title" content="ZTX Hosting - Premium Game Server Hosting">
   <meta name="twitter:description" content="Powerful hosting for Minecraft, Rust, ARK, and more with 24/7 support. High-performance servers at affordable prices.">
-  <meta name="twitter:image" content="/ztxbanner.png">
+  <meta name="twitter:image" content="https://ztxhosting.site/ztxbanner.png">
 
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet" />
+  <!-- Google Fonts and Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS for styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
+    /* Custom CSS for advanced styling and animations */
     :root {
       --primary: #1A1A1A;
       --secondary: #674CC4;
       --accent: #8E6CEF;
-      --dark: #000000;
-      --light: #FFFFFF;
-      --gray: #666666;
-      --light-gray: #F0F0F0;
       --deep-purple-blue: #4D2FDB;
-      --transition-speed: 0.3s ease;
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
       font-family: 'Poppins', sans-serif;
-      background: var(--light);
-      color: var(--dark);
-      line-height: 1.6;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
-
-    header {
-      background: var(--light);
-      padding: 15px 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--primary);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo img {
-      width: 35px;
-      height: 35px;
-      display: block;
-    }
-
-    nav {
-      display: contents;
-    }
-
-    .nav-menu {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-    }
-
-    .nav-menu a {
-      color: var(--dark);
-      text-decoration: none;
-      font-weight: 500;
-      padding: 8px 12px;
-      border-radius: 4px;
-      transition: all var(--transition-speed);
-      white-space: nowrap;
-    }
-
-    .nav-menu a:hover, .nav-menu a.active {
-      background: var(--light-gray);
-      color: var(--primary);
-    }
-
-    .nav-menu .login-btn {
-      color: var(--secondary);
-      margin-left: 10px;
-    }
-
-    .dropdown {
-      position: relative;
-      display: inline-block;
-    }
-
-    .dropdown-content {
-      display: none;
-      position: absolute;
-      background-color: var(--light);
-      min-width: 160px;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      z-index: 1;
-      border-radius: 4px;
-      top: 100%;
-      left: 0;
-      margin-top: 5px;
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity var(--transition-speed), transform var(--transition-speed);
-      pointer-events: none;
-    }
-
-    .dropdown-content a {
-      color: var(--dark);
-      padding: 12px 16px;
-      text-decoration: none;
-      display: block;
-      text-align: left;
-      border-radius: 0;
-      transition: background-color var(--transition-speed);
-    }
-
-    .dropdown-content a:hover {
-      background-color: var(--light-gray);
-      color: var(--primary);
-    }
-
-    .dropdown:hover .dropdown-content,
-    .dropdown.active .dropdown-content {
-      display: block;
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .dropdown .dropbtn {
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .dropdown .dropbtn i {
-      font-size: 0.8em;
-    }
-
-    .mobile-menu-btn {
-      display: none;
-      background: none;
-      border: none;
-      color: var(--primary);
-      font-size: 1.8rem;
-      cursor: pointer;
-      padding: 8px;
-    }
-
-    .hero {
+    .hero-gradient {
       background: linear-gradient(135deg, var(--secondary), var(--deep-purple-blue));
-      color: var(--light);
-      padding: 100px 5%;
-      text-align: center;
     }
-
-    .hero h1 {
-      font-size: clamp(2rem, 6vw, 3rem);
-      font-weight: 700;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto 30px;
-      opacity: 0.9;
-    }
-
     .cta-button {
-      display: inline-block;
-      padding: 16px 32px;
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--light);
-      border-radius: 4px;
-      background: var(--accent);
-      text-decoration: none;
-      transition: var(--transition-speed);
+      transition: all 0.3s ease;
     }
-
     .cta-button:hover {
       transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(142, 108, 239, 0.3);
+      box-shadow: 0 10px 20px rgba(142, 108, 239, 0.4);
     }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .section {
-      padding: 80px 0;
-    }
-
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    .section-title h2 {
-      font-size: 2rem;
-      color: var(--primary);
-      margin-bottom: 15px;
-    }
-
-    .section-title p {
-      color: var(--gray);
-      max-width: 600px;
-      margin: 0 auto 30px;
-    }
-
-    .section-title .view-plans-button {
-      margin-top: 20px;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 50px;
-    }
-
     .feature-card {
-      background: var(--light-gray);
-      border-radius: 8px;
-      padding: 30px;
-      text-align: center;
-      transition: transform var(--transition-speed);
+      transition: all 0.3s ease;
     }
-
     .feature-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
     }
-
-    .feature-icon {
-      font-size: 2.5rem;
-      color: var(--secondary);
-      margin-bottom: 20px;
+    .nav-link-underline {
+        position: relative;
+        text-decoration: none;
     }
-
-    .feature-card h3 {
-      font-size: 1.2rem;
-      margin-bottom: 15px;
-      color: var(--primary);
-    }
-
-    .feature-card p {
-      color: var(--gray);
-    }
-
-    .footer {
-      background: var(--primary);
-      color: var(--light);
-      padding: 50px 5% 30px;
-    }
-
-    .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-      margin-bottom: 20px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--gray);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color var(--transition-speed);
-      padding: 8px;
-    }
-
-    .footer-links a:hover {
-      color: var(--light);
-    }
-
-    .footer-bottom {
-      text-align: center;
-      padding-top: 30px;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--gray);
-      font-size: 0.9rem;
-    }
-
-    @media (max-width: 768px) {
-      .nav-menu {
-        display: none;
+    .nav-link-underline::after {
+        content: '';
         position: absolute;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: var(--light);
-        flex-direction: column;
-        padding: 20px;
-        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-      }
-
-      .nav-menu.active {
-        display: flex;
-      }
-
-      .mobile-menu-btn {
-        display: block;
-      }
-
-      .dropdown-content {
-        position: static;
-        box-shadow: none;
-        min-width: unset;
-        margin-top: 0;
-        transform: none;
-        opacity: 1;
-        padding-left: 20px;
-        background-color: var(--light-gray);
-      }
-
-      .dropdown:hover .dropdown-content,
-      .dropdown.active .dropdown-content {
-        display: block;
-        pointer-events: auto;
-      }
-
-      .footer-links {
-        flex-direction: column;
-        gap: 10px;
-      }
+        width: 0;
+        height: 2px;
+        bottom: -4px;
+        left: 50%;
+        background-color: var(--secondary);
+        transition: all 0.3s ease;
+        transform: translateX(-50%);
     }
-
-    @media (prefers-reduced-motion: reduce) {
-      .cta-button, .feature-card, .nav-menu a, .dropdown-content {
-        transition: none;
-      }
+    .nav-link-underline:hover::after {
+        width: 100%;
+    }
+    /* Animation for sections on scroll */
+    .fade-in-up {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    }
+    .fade-in-up.visible {
+        opacity: 1;
+        transform: translateY(0);
     }
   </style>
 </head>
-<body>
-  <header>
-    <div class="logo">
-      <img src="/favicon.svg" alt="ZTX Hosting Logo" loading="lazy" />
-      <span>ZTX Hosting</span>
-    </div>
-    <nav role="navigation" aria-label="Main navigation">
-      <div class="nav-menu" id="nav-menu">
-        <div class="dropdown">
-          <a href="javascript:void(0)" class="dropbtn" role="button" aria-haspopup="true" aria-expanded="false" tabindex="0">
-            Game Hosting <i class="fas fa-caret-down"></i>
-          </a>
-          <div class="dropdown-content" role="menu">
-            <a href="/coming" role="menuitem">Minecraft Hosting</a>
-            <a href="/coming" role="menuitem">Rust Hosting</a>
-            <a href="/coming" role="menuitem">ARK Hosting</a>
-            <a href="/coming" role="menuitem">CS:GO Hosting</a>
-            <a href="/game-hosting" role="menuitem">View All Games</a>
+<body class="bg-white text-gray-800">
+
+  <!-- Header Section -->
+  <header class="bg-white/80 backdrop-blur-lg shadow-sm sticky top-0 z-50">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+      <a href="#" class="flex items-center gap-3" aria-label="ZTX Hosting Homepage">
+        <img src="https://ztxhosting.site/favicon.svg" alt="ZTX Hosting Logo" class="h-9 w-9" />
+        <span class="text-2xl font-bold text-gray-800">ZTX Hosting</span>
+      </a>
+      
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-2">
+        <div class="relative group">
+          <button class="flex items-center gap-1.5 text-gray-600 hover:text-gray-900 font-medium px-4 py-2 rounded-md transition-colors nav-link-underline">
+            Game Hosting
+            <svg class="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 111.06 1.06l-4.25 4.25a.75.75 0 01-1.06 0L5.23 8.27a.75.75 0 01.02-1.06z" clip-rule="evenodd" /></svg>
+          </button>
+          <div class="absolute mt-2 w-48 bg-white rounded-md shadow-lg z-20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none group-hover:pointer-events-auto">
+            <a href="#game-hosting" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-indigo-600">Minecraft Hosting</a>
+            <a href="#game-hosting" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-indigo-600">Rust Hosting</a>
+            <a href="#game-hosting" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-indigo-600">ARK Hosting</a>
+            <a href="#game-hosting" class="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100 hover:text-indigo-600">CS:GO Hosting</a>
+            <a href="#game-hosting" class="block px-4 py-3 text-sm font-semibold text-indigo-600 hover:bg-gray-100">View All Games</a>
           </div>
         </div>
-        <a href="/vps">VPS</a>
-        <a href="/dedicated">Dedicated</a>
-        <a href="/support" class="support-btn">Support</a>
-        <a href="/login" class="login-btn">Login</a>
-      </div>
-    </nav>
-    <button class="mobile-menu-btn" aria-label="Toggle mobile menu" aria-expanded="false" onclick="toggleMenu()">
-      <i class="fas fa-bars"></i>
-    </button>
+        <a href="#vps-hosting" class="text-gray-600 hover:text-gray-900 font-medium px-4 py-2 rounded-md transition-colors nav-link-underline">VPS</a>
+        <a href="#dedicated-servers" class="text-gray-600 hover:text-gray-900 font-medium px-4 py-2 rounded-md transition-colors nav-link-underline">Dedicated</a>
+        <a href="#" class="text-gray-600 hover:text-gray-900 font-medium px-4 py-2 rounded-md transition-colors nav-link-underline">Support</a>
+        <a href="#" class="ml-4 bg-indigo-600 text-white font-medium px-5 py-2.5 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300">Login</a>
+      </nav>
+
+      <!-- Mobile Menu Button -->
+      <button id="mobile-menu-btn" class="md:hidden text-gray-700 hover:text-indigo-600" aria-label="Toggle mobile menu" aria-expanded="false">
+        <svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white px-4 pt-2 pb-4 space-y-2">
+        <a href="#game-hosting" class="block text-gray-600 hover:text-indigo-600 font-medium py-2">Game Hosting</a>
+        <a href="#vps-hosting" class="block text-gray-600 hover:text-indigo-600 font-medium py-2">VPS</a>
+        <a href="#dedicated-servers" class="block text-gray-600 hover:text-indigo-600 font-medium py-2">Dedicated</a>
+        <a href="#" class="block text-gray-600 hover:text-indigo-600 font-medium py-2">Support</a>
+        <a href="#" class="block bg-indigo-600 text-white text-center font-medium mt-2 px-5 py-2.5 rounded-lg shadow-md hover:bg-indigo-700 transition-all duration-300">Login</a>
+    </div>
   </header>
 
   <main>
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="container">
-        <h1 id="hero-title">Premium Game Server Hosting</h1>
-        <p>Get ultra-low latency with 99.99% uptime guarantee and premium hardware for the best gaming experience.</p>
-        <a href="/game-hosting" class="cta-button">Get Started Now</a>
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white overflow-hidden">
+      <div class="container mx-auto px-6 py-24 md:py-32 text-center">
+        <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold mb-4 leading-tight fade-in-up">
+          Premium Game Server Hosting
+        </h1>
+        <p class="text-lg sm:text-xl max-w-3xl mx-auto opacity-90 mb-8 fade-in-up" style="transition-delay: 0.2s;">
+          Get ultra-low latency with 99.99% uptime guarantee and premium hardware for the best gaming experience.
+        </p>
+        <a href="#" class="inline-block bg-white text-indigo-600 font-bold text-lg px-8 py-4 rounded-lg shadow-2xl cta-button fade-in-up" style="transition-delay: 0.4s;">
+          Get Started Now
+        </a>
       </div>
     </section>
 
-    <section class="section" id="game-hosting" aria-labelledby="game-hosting-title">
-      <div class="container">
-        <div class="section-title">
-          <h2 id="game-hosting-title">Game Hosting Plans</h2>
-          <p>Perfect for Minecraft, Rust, ARK, CS:GO, and other popular games.</p>
-          <a href="/game-hosting" class="cta-button view-plans-button">View Plans</a>
+    <!-- Hosting Plan Sections -->
+    <div class="divide-y divide-gray-100">
+      <section id="game-hosting" class="py-20 animated-section">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold text-gray-800 mb-3 fade-in-up">Game Hosting Plans</h2>
+          <p class="text-lg text-gray-600 mb-6 fade-in-up" style="transition-delay: 100ms;">Perfect for Minecraft, Rust, ARK, CS:GO, and other popular games.</p>
+          <a href="#" class="inline-block bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg cta-button fade-in-up" style="transition-delay: 200ms;">View Plans</a>
         </div>
-      </div>
-    </section>
+      </section>
+      <section id="vps-hosting" class="py-20 animated-section">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold text-gray-800 mb-3 fade-in-up">VPS Hosting</h2>
+          <p class="text-lg text-gray-600 mb-6 fade-in-up" style="transition-delay: 100ms;">High-performance virtual private servers with full root access.</p>
+          <a href="#" class="inline-block bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg cta-button fade-in-up" style="transition-delay: 200ms;">View Plans</a>
+        </div>
+      </section>
+      <section id="dedicated-servers" class="py-20 animated-section">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold text-gray-800 mb-3 fade-in-up">Dedicated Servers</h2>
+          <p class="text-lg text-gray-600 mb-6 fade-in-up" style="transition-delay: 100ms;">Enterprise-grade hardware with complete control.</p>
+          <a href="#" class="inline-block bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg cta-button fade-in-up" style="transition-delay: 200ms;">View Plans</a>
+        </div>
+      </section>
+    </div>
 
-    <section class="section" id="vps-hosting" aria-labelledby="vps-hosting-title">
-      <div class="container">
-        <div class="section-title">
-          <h2 id="vps-hosting-title">VPS Hosting</h2>
-          <p>High-performance virtual private servers with full root access.</p>
-          <a href="/vps" class="cta-button view-plans-button">View Plans</a>
+    <!-- Why Choose Us Section -->
+    <section class="bg-gray-50 py-20">
+      <div class="container mx-auto px-6 animated-section">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4 fade-in-up">Why Choose ZTX Hosting?</h2>
+          <p class="text-lg text-gray-600 max-w-2xl mx-auto fade-in-up" style="transition-delay: 100ms;">We provide the best infrastructure and support for your gaming needs.</p>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="dedicated-servers" aria-labelledby="dedicated-servers-title">
-      <div class="container">
-        <div class="section-title">
-          <h2 id="dedicated-servers-title">Dedicated Servers</h2>
-          <p>Enterprise-grade hardware with complete control.</p>
-          <a href="/dedicated" class="cta-button view-plans-button">View Plans</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" aria-labelledby="why-choose-title">
-      <div class="container">
-        <div class="section-title">
-          <h2 id="why-choose-title">Why Choose ZTX Hosting?</h2>
-          <p>We provide the best infrastructure and support for your gaming needs.</p>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <i class="fas fa-tachometer-alt"></i>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="feature-card bg-white rounded-xl p-8 text-center shadow-lg fade-in-up" style="transition-delay: 200ms;">
+            <div class="flex justify-center items-center mb-4 text-indigo-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
             </div>
-            <h3>High Performance</h3>
-            <p>Latest generation hardware with NVMe storage for maximum speed.</p>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">High Performance</h3>
+            <p class="text-gray-600">Latest generation hardware with NVMe storage for maximum speed.</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <i class="fas fa-shield-alt"></i>
+          <div class="feature-card bg-white rounded-xl p-8 text-center shadow-lg fade-in-up" style="transition-delay: 300ms;">
+            <div class="flex justify-center items-center mb-4 text-indigo-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" /></svg>
             </div>
-            <h3>DDoS Protection</h3>
-            <p>Enterprise-grade protection against attacks and malicious traffic.</p>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">DDoS Protection</h3>
+            <p class="text-gray-600">Enterprise-grade protection against attacks and malicious traffic.</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <i class="fas fa-headset"></i>
+          <div class="feature-card bg-white rounded-xl p-8 text-center shadow-lg fade-in-up" style="transition-delay: 400ms;">
+            <div class="flex justify-center items-center mb-4 text-indigo-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a2 2 0 01-2-2V7a2 2 0 012-2h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293H17z" /></svg>
             </div>
-            <h3>24/7 Support</h3>
-            <p>Our expert team is available around the clock to assist you.</p>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">24/7 Support</h3>
+            <p class="text-gray-600">Our expert team is available around the clock to assist you.</p>
           </div>
-          <div class="feature-card">
-            <div class="feature-icon" aria-hidden="true">
-              <i class="fas fa-server"></i>
+          <div class="feature-card bg-white rounded-xl p-8 text-center shadow-lg fade-in-up" style="transition-delay: 500ms;">
+            <div class="flex justify-center items-center mb-4 text-indigo-500">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9V3m-9 9h18" /></svg>
             </div>
-            <h3>Global Network</h3>
-            <p>Low-latency servers in North America, Europe, and Asia.</p>
+            <h3 class="text-xl font-semibold mb-3 text-gray-800">Global Network</h3>
+            <p class="text-gray-600">Low-latency servers in North America, Europe, and Asia.</p>
           </div>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer" aria-label="Footer">
-    <div class="container">
-      <nav class="footer-links" aria-label="Footer navigation">
-        <a href="/terms" rel="noopener">Terms</a>
-        <a href="/privacy" rel="noopener">Privacy</a>
-        <a href="/refund" rel="noopener">Refund</a>
-        <a href="/blog" rel="noopener">Blog</a>
-        <a href="/sitemap.xml" rel="noopener">Sitemap</a>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white">
+    <div class="container mx-auto px-6 py-12">
+      <nav class="flex justify-center flex-wrap gap-x-6 gap-y-2 mb-8">
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Refund</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a>
+        <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
       </nav>
-      <div class="footer-bottom">
-        <p>© 2023 - 2025 ZTX Hosting | All rights reserved</p>
+      <div class="text-center text-gray-500 border-t border-gray-700 pt-8">
+        <p>&copy; <span id="copyright-year">2025</span> ZTX Hosting | All rights reserved</p>
       </div>
     </div>
   </footer>
 
   <script>
-    /**
-     * Toggles the visibility of the mobile navigation menu.
-     */
-    function toggleMenu() {
-      const menu = document.getElementById('nav-menu');
-      const button = document.querySelector('.mobile-menu-btn');
-      const isExpanded = button.getAttribute('aria-expanded') === 'true';
-      menu.classList.toggle('active');
-      button.setAttribute('aria-expanded', !isExpanded);
-
-      // Close any open dropdowns when toggling the main menu
-      document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-        dropdown.classList.remove('active');
-        dropdown.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
-      });
-    }
-
-    /**
-     * Toggles the visibility of a dropdown menu.
-     * @param {Event} event The click or keydown event.
-     */
-    function toggleDropdown(event) {
-      if (event.type === 'keydown' && !['Enter', ' '].includes(event.key)) return;
-      const dropdown = event.currentTarget.closest('.dropdown');
-      const isExpanded = event.currentTarget.getAttribute('aria-expanded') === 'true';
-
-      // Close all other open dropdowns
-      document.querySelectorAll('.dropdown.active').forEach(openDropdown => {
-        if (openDropdown !== dropdown) {
-          openDropdown.classList.remove('active');
-          openDropdown.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
-        }
-      });
-
-      // Toggle the clicked dropdown
-      dropdown.classList.toggle('active');
-      event.currentTarget.setAttribute('aria-expanded', !isExpanded);
-
-      if (event.currentTarget.getAttribute('href') === 'javascript:void(0)') {
-        event.preventDefault();
-      }
-    }
-
-    // Add event listeners for dropdowns (click and keydown)
-    document.querySelectorAll('.dropbtn').forEach(btn => {
-      btn.addEventListener('click', toggleDropdown);
-      btn.addEventListener('keydown', toggleDropdown);
-    });
-
-    // Close dropdowns when clicking outside
-    document.addEventListener('click', function(event) {
-      if (!event.target.closest('.dropdown') && !event.target.closest('.mobile-menu-btn')) {
-        document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-          dropdown.classList.remove('active');
-          dropdown.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
+    document.addEventListener('DOMContentLoaded', () => {
+      // --- Mobile menu toggle ---
+      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+      const mobileMenu = document.getElementById('mobile-menu');
+      if (mobileMenuBtn && mobileMenu) {
+        mobileMenuBtn.addEventListener('click', () => {
+          const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
+          mobileMenuBtn.setAttribute('aria-expanded', !isExpanded);
+          mobileMenu.classList.toggle('hidden');
+          // Toggle icon
+          mobileMenuBtn.innerHTML = !isExpanded 
+            ? `<svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>`
+            : `<svg class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>`;
         });
       }
-    });
 
-    // Debounce click outside to improve performance
-    let debounceTimeout;
-    document.addEventListener('click', function(event) {
-      clearTimeout(debounceTimeout);
-      debounceTimeout = setTimeout(() => {
-        if (!event.target.closest('.dropdown') && !event.target.closest('.mobile-menu-btn')) {
-          document.querySelectorAll('.dropdown.active').forEach(dropdown => {
-            dropdown.classList.remove('active');
-            dropdown.querySelector('.dropbtn').setAttribute('aria-expanded', 'false');
+      // --- On-load animation for Hero section ---
+      // The .visible class is added immediately on load for the hero elements.
+      const heroElements = document.querySelectorAll('.hero-gradient .fade-in-up');
+      heroElements.forEach(el => {
+        el.classList.add('visible');
+      });
+
+      // --- Scroll-triggered animations for other sections ---
+      const animatedSections = document.querySelectorAll('.animated-section');
+      const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                  // Find all elements within the section that need to be animated
+                  const elementsToAnimate = entry.target.querySelectorAll('.fade-in-up');
+                  elementsToAnimate.forEach(el => {
+                      el.classList.add('visible');
+                  });
+                  // Stop observing the section once it has been animated
+                  observer.unobserve(entry.target);
+              }
           });
-        }
-      }, 100);
+      }, { threshold: 0.15 }); // Trigger when 15% of the section is visible
+
+      animatedSections.forEach(section => {
+          observer.observe(section);
+      });
+
+      // --- Dynamic Copyright Year ---
+      const copyrightYearEl = document.getElementById('copyright-year');
+      if (copyrightYearEl) {
+        copyrightYearEl.textContent = new Date().getFullYear();
+      }
     });
   </script>
+
 </body>
 </html>
+
