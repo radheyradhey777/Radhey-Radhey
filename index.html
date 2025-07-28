@@ -7,7 +7,7 @@
   <meta name="keywords" content="game server hosting, Minecraft hosting, Rust hosting, ARK hosting, VPS hosting, dedicated servers, low latency, DDoS protection">
   <meta name="author" content="ZTX Hosting">
   <meta name="robots" content="index, follow">
-  <title>ZTX Hosting</title>
+  <title>ZTX Hosting - Premium Game Server Hosting</title>
 
   <!-- Favicon and Touch Icons -->
   <link rel="icon" type="image/svg+xml" href="https://ztxhosting.site/favicon.svg" />
@@ -231,14 +231,12 @@
   <footer class="bg-gray-800 text-white">
     <div class="container mx-auto px-6 py-12">
       <nav class="flex justify-center flex-wrap gap-x-6 gap-y-2 mb-8">
-        <a href="#" class="text-gray-400 hover:text-white transition-colors">Terms</a>
-        <a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy</a>
-        <a href="#" class="text-gray-400 hover:text-white transition-colors">Refund</a>
-        <a href="#" class="text-gray-400 hover:text-white transition-colors">Blog</a>
-        <a href="#" class="text-gray-400 hover:text-white transition-colors">Sitemap</a>
+        <a href="terms-of-service" class="text-gray-400 hover:text-white transition-colors">Terms of service</a>
+        <a href="privacy-policy" class="text-gray-400 hover:text-white transition-colors">Privacy policy</a>
+        <a href="refund-policy" class="text-gray-400 hover:text-white transition-colors">Refund policy</a>
       </nav>
       <div class="text-center text-gray-500 border-t border-gray-700 pt-8">
-        <p>&copy; <span id="copyright-year">2025</span> ZTX Hosting | All rights reserved</p>
+        <p>&copy; <span id="copyright-year">2022</span> ZTX Hosting — Premium Game Hosting, VPS, and Bot Hosting</p>
       </div>
     </div>
   </footer>
@@ -289,9 +287,10 @@
 
       // --- Dynamic Copyright Year ---
       const copyrightYearEl = document.getElementById('copyright-year');
-      if (copyrightYearEl) {
-        copyrightYearEl.textContent = new Date().getFullYear();
-      }
+  if (copyrightYearEl) {
+    const currentYear = new Date().getFullYear();
+    copyrightYearEl.textContent = currentYear;
+  }
     });
   </script>
 
